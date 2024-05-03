@@ -73,8 +73,8 @@
             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">Noticias</a></li>
             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">Pesquisas</a></li>
             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">Bolsas</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal" data-toggle="modal" data-target="#loginModal">login</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#signupModal" data-toggle="modal" data-target="#signupModal">Registre-se</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="login.php">login</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="login.php">Registre-se</a></li>
           </ul>
         </div>
       </div>
@@ -105,7 +105,7 @@
               <a class="nav-link" href="events.html">Eventos</a>
             </li>
             <li class="nav-item @@blog">
-              <a class="nav-link" href="blog.html">Blog</a>
+              <a class="nav-link" href="sobrenos.html">Equipe</a>
             </li>
             <li class="nav-item dropdown view">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -125,6 +125,9 @@
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="contact.html">Contato</a>
+            </li>
+            <li class="nav-item @@blog">
+              <a class="nav-link" href="eduia.html">EduIA</a>
             </li>
           </ul>
         </div>
@@ -224,11 +227,11 @@
     <div class="row">
       <div class="col-lg-7 mb-4 mb-lg-0">
         <form action="/contact.html" method="POST">
-          <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Seu Nome" required>
+          <input type="text" class="form-control mb-3" id="nomeID" name="name" placeholder="Seu Nome" required>
           <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Seu Email" required>
           <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Assunto" required>
           <textarea name="message" id="message" class="form-control mb-3" placeholder="Sua mensagem" required></textarea>
-          <button type="submit" value="send" class="btn btn-primary">Enviar mensagem</button>
+          <button type="submit" value="send" class="btn btn-primary" onclick="enviarMensagem()">Enviar mensagem</button>
         </form>
       </div>
       <div class="col-lg-5">
@@ -260,7 +263,7 @@
           <form action="#">
             <div class="input-wrapper">
               <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Digite seu email...">
-              <button type="submit" value="send" class="btn btn-primary">Juntar</button>
+              <button type="submit" value="send" class="btn btn-primary" onclick="enviar()">Juntar</button>
             </div>
           </form>
         </div>
@@ -341,6 +344,26 @@
   </div>
 </footer>
 <!-- /footer -->
+<script>
+  function enviar() {
+     
+    alert('Obrigado, cheque sua caixa de email!');
+      
+  }
+
+</script>
+<script>
+  function enviarMensagem() {
+      var nome = document.getElementById("nomeID");
+
+      if (nome.value != "") {
+          alert('Obrigado ' + nome.value + ' sua reclamação foi enviada com sucesso');
+
+          window.location.href='/educenter-bootstrap-main/theme/contact.html';
+      }
+  }
+
+</script>
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
